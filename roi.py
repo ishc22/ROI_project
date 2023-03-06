@@ -20,7 +20,7 @@ class RentalInvestmentRoi():
 
     def introduction(self,):
         
-        print("\n\nWelcome to your one and only Rental Property Calculator")
+        print("\n\nWelcome to your one and only Rental Property Calculator!")
         name = input("What's your name? Please type your name here: ")
         self.name = name
         response1 = input(f"Hello {name.title()}, if you wish to calculate your Rental Property ROI please press 'enter'. "
@@ -29,19 +29,21 @@ class RentalInvestmentRoi():
         while response1.lower() not in ('exit', 'enter'):
             response1 = input("***COMMAND INVALID*** \nPLease press 'enter' or 'cancel': ")
         if response1 == 'enter':
+        
             print("\nGreat! When answering the following questions please:"
                   "\n1.)Refrain from using capital letters."
                   "\n2.)Don't use punctuation marks or symbols when typing dollar amounts."
                   "\n3.)Round up to your nearest dollar.\n"
                   )
-        elif response1 == 'cancel':
+        elif response1 == 'exit':
             print("\nThanks for checking us out! When you're ready to calculate you're ROI please come back.")
+            
                 
 
     def monthly_income(self):
         rent_income, laundry, storage, miscellaneous, = 0, 0, 0, 0,
         
-        print(f"{self.name.title()}, first we need to figure out your monthly income from the rental properties."
+        print(f"{self.name.title()}, first we need to figure out your monthly income from your rental property."
               "\nPlease answer the following questions. " 
               #"\n*If you want to exit the calculator at anytime please type 'exit'. "
               )
@@ -71,7 +73,7 @@ class RentalInvestmentRoi():
                                 "\n1.Laundry"
                                 "\n2.Storage"
                                 "\n3.Miscellaneous"
-                                "\n4.No more sources of income."
+                                "\n4.No more sources of income.\n"
                                 "\nPLease select a number: "
                                 )
                 
@@ -326,7 +328,7 @@ class RentalInvestmentRoi():
                         "\n2.Clossing costs"
                         "\n3.Rehab"
                         "\n4.Miscellaneous"
-                        "\n5.Finished providing investment sources."
+                        "\n5.Finished providing investment sources.\n"
                         "\nPlease select a number: "
                         )
             while response4 not in ('1', '2', '3', '4', '5'):
@@ -385,7 +387,7 @@ class RentalInvestmentRoi():
                         break
 
             elif response4 == '5':
-                response4 = input("\nAre you finished documenting your intial investment? Please type 'yes' or 'no': ")
+                response4 = input("\nAre you finished documenting your intial investment amount? Please type 'yes' or 'no': ")
                 while response4 not in ('yes', 'no'):
                     response4 = input("***COMMAND INVALID*** \nPLease type 'yes' or 'no': ")
                 if response4 == 'no':
@@ -396,7 +398,7 @@ class RentalInvestmentRoi():
         self.total_investment = (int(down_payment) + int(closing_costs) + int(rehab) + int(miscellaneous))
 
         print(
-            f"Here are your total investment/costs:\n"
+            f"\nHere are your total investment/costs:\n"
             f"\nDown payment: ${down_payment}"
             f"\nClosing costs: ${closing_costs}"
             f"\nRehab: ${rehab}"
@@ -413,10 +415,10 @@ class RentalInvestmentRoi():
         roi = str(((annual_cashflow / self.total_investment) * 100)) + '%'
 
         print(
-            f"\nYour rental property(s) generate an annual income of ${yearly_income}."
+            f"\nYour rental property will generate an annual income of ${yearly_income}."
             f"\nYour yearly expenses are are ${yearly_expense}."
             f"\nYour annual cashflow is ${annual_cashflow}.\n"
-            f"\nThe rate of return on your property investment is {roi}."
+            f"\nThe rate of return on your property investment is {roi}.\n"
 
             "\nThaks for using our property investment calculator. See you soon!\n"
             )
